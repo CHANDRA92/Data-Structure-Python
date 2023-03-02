@@ -28,4 +28,3 @@ if binary_search(a,found):
     print ("Element found at ",pos+1)
 else:
     print ("Element not found")
-
