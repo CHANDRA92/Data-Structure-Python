@@ -1,50 +1,109 @@
-maxstack = int(input("Enter the stack size :"))
-stk = []*maxstack
-top = -1
-def push (item):
-    if (globals() ['top'] == maxstack-1):
-        print ("Stack is Overflowed")
-    else :
-        for i in stk:
-            stk[i]=item
-        globals() ['top']+=1
-        print(globals() ['top'])
-        # stk.insert([globals() ['top']],item)
-        # stk.append(item)
-        print(item,"is Push in stack")
-def pop ():
-    if (globals() ['top']==-1):
-        # globals() ['top'] == None
-        print('Underflow')
-    else:
-        print('Pop :',stk[globals() ['top']])
-        globals() ['top']-=1
-def display():
-  if(globals() ['top']==-1):
-    print('Stack is empty!')
-  else:
-    # globals() ['top']=len(stk)-1
-    print(stk[globals() ['top']])
-    print(stk[globals() ['top']],'<---top')
-    for i in range(globals() ['top']-1,-1,-1):
-      print(stk[i])
+import array as arr 
+
+
+
+
+
+class stack:
+
+    def __init__(self):
+
+        self.top=-1
+
+        self.maxstk=int(input("enter size of stack:"))
+
+        self.arr=arr.array('i',[0]*self.maxstk)
+
+
+
+    def Push(self,n):
+
+        self.n=n
+
+        if self.top == self.maxstk-1:
+
+            print("stack overflow")
+
+        else:
+
+            self.top+=1
+
+            self.arr[self.top]=self.n
+
+
+
+    def Pop(self):
+
+        if self.top==-1:
+
+            print("stack underflow")
+
+            return -1
+
+        else :
+
+            self.item = self.arr[self.top]
+
+            self.top-=1
+
+            return self.item
+
+
+
+    def Display(self):
+
+        if self.top == -1:
+
+            print("stack is empty")
+
+        else :
+
+            for i in range(self.top,-1,-1):
+
+                print(self.arr[i])
+                
+s=stack()
+
 while True:
-    print("""Enter the operation
-    1.Push
-    2.Pop
-    3.Display
-    4.quit
-    """)
-    choice = int (input(":->"))
-    if choice == 1:
-        
-        item = int (input("Enter item you want to push :"))
-        push(item)
-    elif choice == 2:
-        pop()
-    elif choice == 3:
-        display()
-    elif choice == 4:
+
+
+
+    print("*****main menu******")
+
+    print("1. Push")
+
+    print("2. Pop")
+
+    print("3. Display")
+
+    print("4. Exit")
+
+    option=input("enter option:")
+
+    if option == "1":
+
+        item=int(input("enter number to push on stack:"))
+
+        s.Push(item)
+
+    elif option == "2":
+
+        val = s.Pop()
+
+        if val!=-1:
+
+            print("Popped element is:",val)
+
+    elif option=="3":
+
+        s.Display()
+
+    elif option=="4":
+
+        print("Exit!!!!")
+
         break
+
     else:
-        print("Enter the incorrect choice")
+
+        print("invalid option!!!")
