@@ -47,7 +47,21 @@ class LinkedList:
                 return
             previous = current
             current = current.next
-        def sort(self):
+    def sort(self):
+            #sort link list using bubble sort
+            #1. create two pointer current and nextnode
+            #2. while nextnode is not null
+
+            current = self.head
+            while current:
+                nextnode = current.next
+                while nextnode:
+                    if current.data > nextnode.data:
+                        current.data, nextnode.data = nextnode.data, current.data
+                    nextnode = nextnode.next
+                current = current.next
+
+
             
 
 l = LinkedList()
@@ -73,7 +87,7 @@ while True:
         l.delete_node(info)
     elif choice == 5:
         print("Values sort by asending order")
-        s.sort()
+        l.sort()
     elif choice == 6:
         print("Exit!!!!")
         break
