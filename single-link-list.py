@@ -61,6 +61,14 @@ class LinkedList:
                     nextnode = nextnode.next
                 current = current.next
 
+    def search(self, value):
+        current = self.head
+        while current:
+            if current.data == value:
+                return True
+            current = current.next
+        return False
+
 
             
 
@@ -72,9 +80,10 @@ while True:
     3. Reverse Node
     4. Delete Node using Value
     5. Sorting link list
+    7. Searching Node
     6. Exit
     """)
-    choice = int(input("Emter choice :"))
+    choice = int(input("Enter choice :"))
     if choice == 1:
         info = int(input("Enter value in node :: "))
         l.append(info)
@@ -88,6 +97,13 @@ while True:
     elif choice == 5:
         print("Values sort by asending order")
         l.sort()
+    elif choice == 7:
+        info = int(input("Enter value in node :: "))
+        if l.search(info):
+            print("Element is Found")
+        else:
+            print("Element Not Found")
+
     elif choice == 6:
         print("Exit!!!!")
         break

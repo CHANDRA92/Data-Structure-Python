@@ -43,6 +43,7 @@ class CircularQLinkedList:
 
 s = CircularQLinkedList()
 
+"""
 while True:
     print("*****main menu******")
 
@@ -83,3 +84,12 @@ while True:
     else:
 
         print("invalid option!!!")
+"""
+
+s.Push(1)
+s.Push(3)
+s.Push(5)
+s.Push(7)
+s.Push(9)
+s.Push(11)
+s.Display()

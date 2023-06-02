@@ -35,10 +35,12 @@
 # b = [1,2,3,4,5,6]
 # c= list(range(6))
 
-# num = [5,3,6,2,4,10]
-# res = map(lambda a,b:a*b,num)
-# print(res)
+num = [5,3,6,2,4,10]
+res = map(lambda a,b:a*b,num)
+print(res)
 
 num = [11,12,13,14,15,16]
 res = list(filter(lambda x:x%3,num))
 print(res)
+
+swap    

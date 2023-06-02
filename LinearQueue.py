@@ -49,7 +49,7 @@ while True:
     print("3. Display")
 
     print("4. Exit")
-
+    
     option=input("enter option:")
 
     if option == "1":
